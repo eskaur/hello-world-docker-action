@@ -1,15 +1,15 @@
 name: 'PR issue link poster'
 description: 'Post link to issue on a PR'
 inputs:
-  pr-branch-name: 
-    description: 'Name of branch that wants to be merged'
-    required: true
   repo-token: 
     description: 'Token for the repo. Can be passed in using {{ secrets.GITHUB_TOKEN }}'
+    required: true
+  comment-url: 
+    description: 'URL for posting PR comments'
     required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.pr-branch-name }}
     - ${{ inputs.repo-token }}
+    - ${{ inputs.comment-url }}

@@ -2,9 +2,11 @@
 
 import os
 import re
+import sys
 
 # For debugging purposes
 print(os.environ)
+print(sys.argv)
 
 # List of valid patterns
 valid_patterns = [

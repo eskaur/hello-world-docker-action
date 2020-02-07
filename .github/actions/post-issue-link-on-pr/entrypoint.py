@@ -8,16 +8,19 @@ import re
 print(os.environ)
 print(sys.argv)
 
-branch_name = os.getenv("GITHUB_HEAD_REF")
-assert branch_name is not None
+#branch_name = os.getenv("GITHUB_HEAD_REF")
+#assert branch_name is not None
 
-token = os.getenv("INPUT_REPO-TOKEN")
-print(branch_name)
-print(token)
-print(token[0:5])
-print(token[-1])
-
-print("-----")
+#token = os.getenv("INPUT_REPO-TOKEN")
+#print(branch_name)
+#print(token)
+#print(token[0:5])
+#print(token[-1])
+#
+#print("-----")
+#
+#
+#import requests
 
 
 #repo_token = sys.argv[1]
