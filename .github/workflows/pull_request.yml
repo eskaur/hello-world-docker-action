@@ -1,4 +1,6 @@
-on: [push]
+
+on: [pull_request]
+
 
 jobs:
   hello_world_job:
@@ -16,16 +18,3 @@ jobs:
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.helloworld.outputs.time }}"
-  check-branchname_job:
-    runs-on: self-hosted
-    name: Branch name check
-    steps:
-      # To use this repository's private action, you must check out the repository
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Check branch name
-        uses: ./.github/actions/check-branchname
-        id: check-branchname
-      # Use the output from the `hello` step
-      #- name: Get the output time
-      #  run: echo "The time was ${{ steps.hello.outputs.time }}"
