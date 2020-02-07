@@ -1,0 +1,14 @@
+name: 'PR issue link poster'
+description: 'Post link to issue on a PR'
+inputs:
+  repo-token: 
+    description: 'Token for the repo. Can be passed in using {{ secrets.GITHUB_TOKEN }}'
+    required: true
+  test-arg:
+    required: false 
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.repo-token }}
+    - ${{ inputs.test-arg }}
