@@ -17,6 +17,7 @@ jobs:
         uses: ./.github/actions/post-issue-link-on-pr
         id: post-issue-link-on-pr
         with:
+          pr-branch-name: ${{ github.event.pull_request.head.ref }}
           repo-token: ${{ secrets.GITHUB_TOKEN }}
 
 
