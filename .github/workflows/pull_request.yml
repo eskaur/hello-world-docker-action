@@ -17,23 +17,5 @@ jobs:
         uses: ./.github/actions/post-issue-link-on-pr
         id: post-issue-link-on-pr
         with:
-          repo-token: ${{ github.event.issue.comments_url }}
+          repo-token: ${{ github.event.pull_request.comments_url }}
           comment-url: ${{ secrets.GITHUB_TOKEN }}
-
-
-#  other_job:
-#    runs-on: self-hosted
-#    name: A different job
-#    steps:
-#      # To use this repository's private action, you must check out the repository
-#      - name: Checkout
-#        uses: actions/checkout@v2
-#      - name: Hello world action step
-#        uses: ./.github/actions/helloworld/
-#        id: helloworld
-#        with:
-#          who-to-greet: 'Mona the Octocat'
-#      # Use the output from the `hello` step
-#      - name: Get the output time
-#        run: echo "The time was ${{ steps.helloworld.outputs.time }}"
-#
