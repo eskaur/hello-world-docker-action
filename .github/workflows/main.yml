@@ -23,7 +23,7 @@ jobs:
       # To use this repository's private action, you must check out the repository
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Hello world action step
+      - name: Check branch name
         uses: ./.github/actions/check-branchname
         id: check-branchname
       # Use the output from the `hello` step
