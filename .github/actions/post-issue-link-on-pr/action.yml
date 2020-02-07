@@ -4,8 +4,6 @@ inputs:
   repo-token: 
     description: 'Token for the repo. Can be passed in using {{ secrets.GITHUB_TOKEN }}'
     required: true
-  test-arg:
-    required: false 
 runs:
   using: 'docker'
   image: 'Dockerfile'
