@@ -3,6 +3,9 @@
 import os
 import re
 
+# For debugging purposes
+print(os.environ)
+
 # List of valid patterns
 valid_patterns = [
     "^master$",

@@ -4,11 +4,21 @@ import os
 import sys
 import re
 
-
-
+# For debugging purposes
 print(os.environ)
-
 print(sys.argv)
+
+branch_name = os.getenv("GITHUB_HEAD_REF")
+assert branch_name is not None
+
+token = os.getenv("INPUT_REPO-TOKEN")
+print(branch_name)
+print(token)
+print(token[0:5])
+print(token[-1])
+
+print("-----")
+
 
 #repo_token = sys.argv[1]
 #print(f"Number of arguments: {len(sys.argv)}")
