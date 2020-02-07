@@ -1,0 +1,16 @@
+# https://help.github.com/en/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows
+on:
+  push:
+
+jobs:
+  check-branchname_job:
+    runs-on: self-hosted
+    name: Branch name check
+    steps:
+      # To use this repository's private action, you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Check branch name
+        uses: ./.github/actions/check-branchname
+        id: check-branchname
+   

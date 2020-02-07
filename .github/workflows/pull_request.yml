@@ -1,0 +1,21 @@
+
+# https://help.github.com/en/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows
+on: 
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
+
+jobs:
+  issue-link-job:
+    runs-on: self-hosted
+    name: Post issue link on new PRs
+    #if: github.event.action == 'opened' 
+    steps:
+      # To use this repository's private action, you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Issue link posting step
+        uses: ./.github/actions/post-issue-link-on-pr
+        id: post-issue-link-on-pr
+        with:
+          repo-token: ${{ github.event.pull_request.comments_url }}
+          comment-url: ${{ secrets.GITHUB_TOKEN }}
